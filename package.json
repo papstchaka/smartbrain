@@ -1,6 +1,5 @@
 {
   "name": "smartbrain",
-  "homepage": "https://papstchaka.github.io/smartbrain",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
