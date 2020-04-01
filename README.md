@@ -11,4 +11,6 @@ Project provides a website you can register and log in to (without email verific
 
 Furthermore, once you are registered you'll get a unique score that tells you the amount of photos analysed by yourself.
 
+Backend-server is implemented due to <a href="https://github.com/papstchaka/smartbrain-api" target="_blank">Smart Brain API</a> and hosted on <a href="https://www.heroku.com/" target="_blank">Heroku</a>.
+
 Implemented by the instructions given from <a href="https://github.com/aneagoie" target="_blank">Andrei Neagioe</a> in his "Zero to Mastery" course on udemy.
