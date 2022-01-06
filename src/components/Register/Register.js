@@ -60,19 +60,16 @@ class Register extends Component {
                 else {
                     this.message = "";
                     if (!this.state.name) {
-                        this.message = "Name";
+                        this.message = "Name is missing";
                     }
                     if (!this.state.email) {
-                        this.message = "Email Adress";
+                        this.message = "Email Adress is missing";
                     }
                     if (!this.state.password) {
-                        this.message = "Password";
+                        this.message = "Password is missing";
                     }
                     if (!this.message) {
                         this.message = "User is already existing!"
-                    }
-                    else {
-                        this.message += " is missing";
                     }
                     if (!this.validateEmail(this.state.email)) {
                         this.message = "Email Adress has invalid format";
