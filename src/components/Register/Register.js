@@ -58,11 +58,12 @@ class Register extends Component {
                     }
                 }
                 else {
-                    if (!this.state.email) {
-                        this.message = "Email Adress";
-                    }
+                    this.message = "";
                     if (!this.state.name) {
                         this.message = "Name";
+                    }
+                    if (!this.state.email) {
+                        this.message = "Email Adress";
                     }
                     if (!this.state.password) {
                         this.message = "Password";
