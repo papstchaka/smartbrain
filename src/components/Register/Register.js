@@ -8,7 +8,16 @@ class Register extends Component {
             email: "",
             password: "",
         }
+        this.message = "";
     }
+
+    validateEmail = (email) => {
+        return String(email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+    };
     
     handleKeyPress = (event) => {
         if (event.key === "Enter") {
@@ -39,8 +48,35 @@ class Register extends Component {
             .then(response => response.json())
             .then(user => {
                 if (user.id) {
-                    this.props.loadUser(user);
-                    this.props.onRouteChange('home');
+                    if (!this.validateEmail(this.state.email)) {
+                        this.message = "Email Adress has invalid format";
+                        this.props.onRouteChange("register");
+                    }
+                    else {
+                        this.props.loadUser(user);
+                        this.props.onRouteChange('home');
+                    }
+                }
+                else {
+                    if (!this.state.email) {
+                        this.message = "Email Adress";
+                    }
+                    if (!this.state.name) {
+                        this.message = "Name";
+                    }
+                    if (!this.state.password) {
+                        this.message = "Password";
+                    }
+                    if (!this.message) {
+                        this.message = "User is already existing!"
+                    }
+                    else {
+                        this.message += " is missing";
+                    }
+                    if (!this.validateEmail(this.state.email)) {
+                        this.message = "Email Adress has invalid format";
+                    }
+                    this.props.onRouteChange('register');
                 }
             });
     }
@@ -52,6 +88,7 @@ class Register extends Component {
                     <div className="measure">
                         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                             <legend className="f1 fw6 ph0 mh0">Register</legend>
+                            <p style={{color: "red"}}>{this.message}</p>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
                                 <input 
