@@ -35,7 +35,9 @@ const initialState = {
     id: "",
     entries: 0,
     joined: ""
-  }
+  },
+  message: "",
+  statusInvalid: false
 }
 
 class App extends Component {
@@ -53,8 +55,11 @@ class App extends Component {
         id: "",
         entries: 0,
         joined: ""
-      }
+      },
+      message: "",
+      statusInvalid: false
     }
+
   }
 
   loadUser = (data) => {
@@ -71,8 +76,9 @@ class App extends Component {
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
-    
+    this.setState({boxes: [{}],message: "no valid image url", statusInvalid: true});
     const faces = data.outputs[0].data.regions;
+    this.setState({boxes: [{}], message: "no faces found", statusInvalid: false});
     return (faces.map((elements) => {
       const face = elements.region_info.bounding_box;
       return {
@@ -85,7 +91,16 @@ class App extends Component {
   }
 
   displayFaceBox = (boxes) => {
-    this.setState({boxes: boxes});
+    var ending;
+    if (boxes.length === 1)
+    {
+      ending = " face"
+    }
+    else
+    {
+      ending = " faces"
+    }
+    this.setState({boxes: boxes, message: "found " + boxes.length + ending});
   }
 
   onInputChange = (event) => {
@@ -93,7 +108,7 @@ class App extends Component {
   }
 
   onPictureSubmit = () => {
-    this.setState({'imageUrl': this.state.input});
+    this.setState({'imageUrl': this.state.input, "message": "", statusInvalid: false});
     fetch('https://strawberry-pie-56167.herokuapp.com/imageurl', {
       method: "post",
       headers: {'Content-Type': 'application/json'},
@@ -113,7 +128,7 @@ class App extends Component {
           })
             .then(response => response.json())
             .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count}))
+              this.setState(Object.assign(this.state.user, {entries: count}));
             })
           .catch(console.log)
         }
@@ -132,7 +147,7 @@ class App extends Component {
   }
 
   render() {
-    const { imageUrl, boxes, route, isSignedIn } = this.state;
+    const { imageUrl, boxes, route, isSignedIn, message, statusInvalid } = this.state;
     return (
       <div className="App">
         <Particles className='particles'
@@ -146,14 +161,19 @@ class App extends Component {
             <ImageLinkForm 
               onInputChange={this.onInputChange} onPictureSubmit={this.onPictureSubmit}
             />
-            <FaceRecognition boxes={boxes} imageUrl={imageUrl}/>
+            <h2 className="white" style={{height: "15px"}}>{message}</h2>
+            { statusInvalid ?
+              <></>
+            :
+              <FaceRecognition boxes={boxes} imageUrl={imageUrl}/>
+            }
           </div>
           : 
           (
             route === "signin" ?
               <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             :
-            <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+              <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
           )
         }
         <a href="https://github.com/papstchaka" target="_blank" style={{position: "fixed", color: "black", bottom: "5px", right: "5px"}}>[2020] Alexander Christoph</a>

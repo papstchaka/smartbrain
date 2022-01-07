@@ -94,6 +94,7 @@ class Register extends Component {
                                     type="text" 
                                     name="name"  
                                     id="name"
+                                    onKeyPress={this.handleKeyPress}
                                     onChange={this.onNameChange}
                                 />
                             </div>
@@ -104,6 +105,7 @@ class Register extends Component {
                                     type="email" 
                                     name="email-address" 
                                     id="email-address"
+                                    onKeyPress={this.handleKeyPress}
                                     onChange={this.onEmailChange}
                                 />
                             </div>

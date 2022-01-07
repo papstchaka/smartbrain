@@ -60,6 +60,7 @@ class SignIn extends Component {
                                     className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                                     type="email" name="email-address"  
                                     id="email-address"
+                                    onKeyPress={this.handleKeyPress}
                                     onChange={this.onEmailChange}
                                 />
                             </div>
