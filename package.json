@@ -1,8 +1,25 @@
 {
   "name": "smartbrain",
   "homepage": "https://papstchaka.github.io/smartbrain",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Frontend for the smartbrain project",
   "private": true,
+  "keywords": [
+    "javascript",
+    "html",
+    "css",
+    "reactjs",
+    "frontend",
+    "backend",
+    "face-detection",
+    "api",
+    "social network"
+  ],
+  "author": "Alex Christoph",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papstchaka/smartbrain.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
