@@ -8,8 +8,9 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
+  # run once a month
   schedule:
-    - cron: '43 17 * * 0'
+    - cron: '* * * * */30'
 
 jobs:
   analyze:
