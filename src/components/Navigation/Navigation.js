@@ -1,24 +1,51 @@
 import React from 'react';
+import Modal from 'react-bootstrap/Modal';
+
+import './Navigation.css';
 
 function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
+    
+    const [show, setShow] = React.useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+
     if (isSignedIn) {
         return (
-            <nav style={{display: "flex", justifyContent: 'flex-end'}}>
-                <p onClick={() => deleteProfile()} className='f3 link dim black underline pa3 pointer'>
-                    Delete Profile
-                </p>
-                <p onClick={() => onRouteChange('signin')} className='f3 link dim black underline pa3 pointer'>
-                    Sign Out
-                </p>
-            </nav>
+            <>
+                <nav style={{display: "flex", justifyContent: 'flex-end'}}>
+                    <p onClick={handleShow} className='cta-btn cta-btn--hero'>
+                        Delete Profile
+                    </p>
+                    <p onClick={() => onRouteChange('signin')} className='cta-btn cta-btn--hero'>
+                        Sign Out
+                    </p>
+                </nav>
+
+                <Modal show={show} onHide={handleClose} dialogClassName="modal-big" contentClassName="modal-content">
+                    <Modal.Header>
+                        <Modal.Title id="contained-modal-title-vcenter"><h1>Are you sure deleting your profile?</h1></Modal.Title>
+                    </Modal.Header>
+                    <Modal.Footer>
+                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" onClick={handleClose}>
+                        No
+                        </a>
+                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" onClick={() => deleteProfile()}>
+                        Yes
+                        </a>
+                    </Modal.Footer>
+                </Modal>
+            </>
         );
     } else {
         return (
             <nav style={{display: "flex", justifyContent: 'flex-end'}}>
-                <p onClick={() => onRouteChange('signin')} className='f3 link dim black underline pa3 pointer'>
+                <p onClick={() => onRouteChange('signin')} className='cta-btn cta-btn--hero'>
                     Sign In
                 </p>
-                <p onClick={() => onRouteChange('register')} className='f3 link dim black underline pa3 pointer'>
+                <p onClick={() => onRouteChange('register')} className='cta-btn cta-btn--hero'>
                     Register
                 </p>
             </nav>
