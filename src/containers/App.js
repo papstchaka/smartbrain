@@ -146,6 +146,17 @@ class App extends Component {
     this.setState({route: route})
   }
 
+  deleteProfile = () => {
+    fetch('https://strawberry-pie-56167.herokuapp.com/deleteprofile', {
+      method: "post",
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+          email: this.state.user.email,
+      })
+    })
+    this.onRouteChange("signin")
+  }
+
   render() {
     const { imageUrl, boxes, route, isSignedIn, message, statusInvalid } = this.state;
     return (
@@ -153,7 +164,7 @@ class App extends Component {
         <Particles className='particles'
           params={particlesOptions}
         />
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile}/>
         { route === 'home' ?
           <div>
             <Logo />
