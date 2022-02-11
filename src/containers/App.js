@@ -119,11 +119,19 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
+          var detected;
+          if (Object.keys(response.outputs[0].data).length === 0) {
+            detected = 0;
+          }
+          else {
+            detected = response.outputs[0].data.regions.length;
+          }
           fetch('https://strawberry-pie-56167.herokuapp.com/image', {
             method: "put",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 id: this.state.user.id,
+                detected: detected
             })
           })
             .then(response => response.json())
