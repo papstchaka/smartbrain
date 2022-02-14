@@ -7,6 +7,7 @@ class Register extends Component {
             name: "",
             email: "",
             password: "",
+            passwordValidation: "",
         }
         this.message = "";
     }
@@ -34,8 +35,20 @@ class Register extends Component {
     onPasswordChange = (event) => {
         this.setState({password: event.target.value});
     }
+    onPasswordValidationChange = (event) => {
+        this.setState({passwordValidation: event.target.value});
+    }
 
     onSubmitSignIn = () => {
+        this.message = "";
+        if (this.state.password !== this.state.passwordValidation) {
+            this.message = "Passwords do not match";
+            this.props.onRouteChange("register");
+        }
+        if (this.state.password.length < 4) {
+            this.message = "Password must at least contain 4 letters";
+            this.props.onRouteChange("register");
+        }
         if (!this.validateEmail(this.state.email)) {
             this.message = "Email Adress has invalid format";
             this.props.onRouteChange("register");
@@ -44,7 +57,7 @@ class Register extends Component {
             this.message = "Email Adress is missing";
             this.props.onRouteChange("register");
         }
-        if (this.validateEmail(this.state.email)) {
+        if (this.message === "") {
             fetch('https://strawberry-pie-56167.herokuapp.com/register', {
                 method: "post",
                 headers: {'Content-Type': 'application/json'},
@@ -122,6 +135,17 @@ class Register extends Component {
                                     id="password"
                                     onKeyPress={this.handleKeyPress}
                                     onChange={this.onPasswordChange}
+                                />
+                            </div>
+                            <div className="mv3">
+                                <label className="db fw6 lh-copy f6" htmlFor="password-validation">Password Validation</label>
+                                <input 
+                                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                                    type="password" 
+                                    name="password-validation"  
+                                    id="password-validation"
+                                    onKeyPress={this.handleKeyPress}
+                                    onChange={this.onPasswordValidationChange}
                                 />
                             </div>
                         </fieldset>
