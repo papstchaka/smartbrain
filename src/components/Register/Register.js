@@ -36,47 +36,51 @@ class Register extends Component {
     }
 
     onSubmitSignIn = () => {
-        fetch('https://strawberry-pie-56167.herokuapp.com/register', {
-            method: "post",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                name: this.state.name,
-                email: this.state.email,
-                password: this.state.password
+        if (!this.validateEmail(this.state.email)) {
+            this.message = "Email Adress has invalid format";
+            this.props.onRouteChange("register");
+        }
+        if (!this.state.email) {
+            this.message = "Email Adress is missing";
+            this.props.onRouteChange("register");
+        }
+        else {
+            fetch('https://strawberry-pie-56167.herokuapp.com/register', {
+                method: "post",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    name: this.state.name,
+                    email: this.state.email,
+                    password: this.state.password
+                })
             })
-        })
-            .then(response => response.json())
-            .then(user => {
-                if (user.id) {
-                    if (!this.validateEmail(this.state.email)) {
-                        this.message = "Email Adress has invalid format";
-                        this.props.onRouteChange("register");
-                    }
-                    else {
+                .then(response => response.json())
+                .then(user => {
+                    if (user.id) {
                         this.props.loadUser(user);
                         this.props.onRouteChange('home');
                     }
-                }
-                else {
-                    this.message = "";
-                    if (!this.state.name) {
-                        this.message = "Name is missing";
+                    else {
+                        this.message = "";
+                        if (!this.state.name) {
+                            this.message = "Name is missing";
+                        }
+                        if (!this.state.email) {
+                            this.message = "Email Adress is missing";
+                        }
+                        if (!this.state.password) {
+                            this.message = "Password is missing";
+                        }
+                        if (!this.message) {
+                            this.message = "User is already existing!"
+                        }
+                        if (!this.validateEmail(this.state.email)) {
+                            this.message = "Email Adress has invalid format";
+                        }
+                        this.props.onRouteChange('register');
                     }
-                    if (!this.state.email) {
-                        this.message = "Email Adress is missing";
-                    }
-                    if (!this.state.password) {
-                        this.message = "Password is missing";
-                    }
-                    if (!this.message) {
-                        this.message = "User is already existing!"
-                    }
-                    if (!this.validateEmail(this.state.email)) {
-                        this.message = "Email Adress has invalid format";
-                    }
-                    this.props.onRouteChange('register');
-                }
-            });
+                });
+        }
     }
 
     render() {        
