@@ -76,9 +76,11 @@ class App extends Component {
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
-    this.setState({boxes: [{}],message: "no valid image url", statusInvalid: true});
-    const faces = data.outputs[0].data.regions;
-    this.setState({boxes: [{}], message: "no faces found", statusInvalid: false});
+    if (Object.keys(data.outputs[0].data).length === 0) {
+      this.setState({boxes: [{}], message: "no faces found", statusInvalid: false});
+      return [];
+    }
+    const faces = data.outputs[0].data.regions;    
     return (faces.map((elements) => {
       const face = elements.region_info.bounding_box;
       return {
@@ -138,11 +140,17 @@ class App extends Component {
             .then(count => {
               this.setState(Object.assign(this.state.user, {entries: count}));
             })
-          .catch(console.log)
+          .catch(error => {            
+            this.setState({boxes: [{}], message: "no valid image url", statusInvalid: true});
+            console.log(error);
+          })
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        this.setState({boxes: [{}], message: "no valid image url", statusInvalid: true});
+        console.log(err);
+      });
   }
 
   onRouteChange = (route) => {
