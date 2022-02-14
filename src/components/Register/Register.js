@@ -44,7 +44,7 @@ class Register extends Component {
             this.message = "Email Adress is missing";
             this.props.onRouteChange("register");
         }
-        else {
+        if (this.validateEmail(this.state.email)) {
             fetch('https://strawberry-pie-56167.herokuapp.com/register', {
                 method: "post",
                 headers: {'Content-Type': 'application/json'},
