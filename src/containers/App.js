@@ -118,6 +118,11 @@ class App extends Component {
           input: this.state.input,
       })
     })
+      .then(response => {
+        if (response.status == 503) {
+          this.setState({boxes: [{}], message: "no valid image url", statusInvalid: true});
+        }
+      })
       .then(response => response.json())
       .then(response => {
         if (response) {
@@ -140,16 +145,19 @@ class App extends Component {
             .then(count => {
               this.setState(Object.assign(this.state.user, {entries: count}));
             })
-          .catch(error => {            
-            this.setState({boxes: [{}], message: "no valid image url", statusInvalid: true});
-            console.log(error);
+          .catch(err => {            
+            console.log(err);
           })
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
       .catch(err => {
-        this.setState({boxes: [{}], message: "no valid image url", statusInvalid: true});
-        console.log(err);
+        if (this.state.statusInvalid) {
+          console.log(err);
+        }
+        else {
+          this.setState({boxes: [{}], message: "backend not responding", statusInvalid: true});
+        }
       });
   }
 
