@@ -1,6 +1,4 @@
-:root {
-    --bounding-color: #149df2;
-}
+@import url("../../colors.css");
 
 .bounding-box {
     position: absolute;

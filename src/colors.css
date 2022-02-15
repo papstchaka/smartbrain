@@ -1,0 +1,17 @@
+:root {
+    --logo-1-color: #2e93aa;
+    --logo-2-color: #ced6d9;
+    --linkform-1-color: rgba(240,166,17,0);
+    --linkform-2-color: #333333;
+    --linkform-3-color: #00cdac;
+    --bounding-color: #149df2;
+    --navigation-1-color: #2e93aa;
+    --navigation-2-color: #ced6d9;
+    --index-1-color: #2e93aa;
+    --index-2-color: #00cdac;
+    --white: white;
+    --black: black;
+    /* --dark-gray: #333333; */
+    --modal-1-color: #2e93aa;
+    --modal-2-color: white;
+}

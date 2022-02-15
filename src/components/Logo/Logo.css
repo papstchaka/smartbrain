@@ -1,3 +1,5 @@
+@import url("../../colors.css");
+
 .Tilt {
-    background: linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%);
+    background: linear-gradient(89deg, var(--logo-1-color) 0%, var(--logo-2-color) 100%);
 }

@@ -1,11 +1,13 @@
+@import url("../../colors.css");
+
 .form {
     width: 700px;
     background:
-        radial-gradient(circle farthest-side at 0% 50%,#fb1 23.5%,rgba(240,166,17,0) 0)21px 30px,
-        radial-gradient(circle farthest-side at 0% 50%,#B71 24%,rgba(240,166,17,0) 0)19px 30px,
-        linear-gradient(#fb1 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#fb1 0)0 0,
-        linear-gradient(150deg,#fb1 24%,#B71 0,#B71 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#B71 0,#B71 76%,#fb1 0)0 0,
-        linear-gradient(30deg,#fb1 24%,#B71 0,#B71 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#B71 0,#B71 76%,#fb1 0)0 0,
-        linear-gradient(90deg,#B71 2%,#fb1 0,#fb1 98%,#B71 0%)0 0 #fb1;
+        radial-gradient(circle farthest-side at 0% 50%,var(--linkform-2-color) 23.5%, var(--linkform-1-color) 0)21px 30px,
+        radial-gradient(circle farthest-side at 0% 50%,var(--linkform-3-color) 24%, var(--linkform-1-color) 0)19px 30px,
+        linear-gradient(var(--linkform-2-color) 14%, var(--linkform-1-color) 0,  var(--linkform-1-color) 85%,var(--linkform-2-color) 0)0 0,
+        linear-gradient(150deg,var(--linkform-2-color) 24%,var(--linkform-3-color) 0,var(--linkform-3-color) 26%, var(--linkform-1-color) 0, var(--linkform-1-color) 74%,var(--linkform-3-color) 0,var(--linkform-3-color) 76%,var(--linkform-2-color) 0)0 0,
+        linear-gradient(30deg,var(--linkform-2-color) 24%,var(--linkform-3-color) 0,var(--linkform-3-color) 26%, var(--linkform-1-color) 0, var(--linkform-1-color) 74%,var(--linkform-3-color) 0,var(--linkform-3-color) 76%,var(--linkform-2-color) 0)0 0,
+        linear-gradient(90deg,var(--linkform-3-color) 2%,var(--linkform-2-color) 0,var(--linkform-2-color) 98%,var(--linkform-3-color) 0%)0 0 var(--linkform-2-color);
     background-size: 40px 60px;
 }

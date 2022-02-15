@@ -1,12 +1,7 @@
-:root {
-    --primary-color: #ced6d9;
-    --secondary-color: #2e93aa;
-    --white: white;
-    --black: black;
-}
+@import url("../../colors.css");
 
 .modal-big {
-    background: var(--white);
+    background: linear-gradient(89deg, var(--modal-1-color) 0%, var(--modal-2-color) 100%);
     text-align: center;
     border: 1px solid var(--black);
     border-radius: 20px;
@@ -58,7 +53,7 @@
   
 .cta-btn--hero {
     border: 2px solid transparent;
-    border-image: linear-gradient(89deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-image: linear-gradient(89deg, var(--navigation-1-color) 0%, var(--navigation-2-color) 100%);
     border-image-slice: 1;
     color: #04C8DE !important;
     background-image: linear-gradient(89deg, var(--white) 0%, var(--white) 100%);
@@ -67,7 +62,7 @@
     -webkit-text-fill-color: var(--white);
     text-decoration: none;
     color: white !important;
-    background-image: linear-gradient(89deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-image: linear-gradient(89deg, var(--navigation-1-color) 0%, var(--navigation-2-color) 100%);
 }
   
 .cta-btn--hero::after {
