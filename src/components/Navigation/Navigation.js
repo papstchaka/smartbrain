@@ -15,6 +15,11 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
         deleteProfile();
     }
 
+    const handleSignout = () => {
+        handleClose();
+        onRouteChange('signin');
+    }
+
     if (isSignedIn) {
         return (
             <>
@@ -22,7 +27,7 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
                     <p onClick={handleShow} className='cta-btn cta-btn--hero'>
                         Delete Profile
                     </p>
-                    <p onClick={() => onRouteChange('signin')} className='cta-btn cta-btn--hero'>
+                    <p onClick={handleSignout} className='cta-btn cta-btn--hero'>
                         Sign Out
                     </p>
                 </nav>
