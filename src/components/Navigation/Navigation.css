@@ -1,7 +1,14 @@
+:root {
+    --primary-color: #ced6d9;
+    --secondary-color: #2e93aa;
+    --white: white;
+    --black: black;
+}
+
 .modal-big {
-    background: white;
+    background: var(--white);
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     border-radius: 20px;
     position: fixed;
     z-index:9999;
@@ -12,7 +19,7 @@
 }
 
 .modal-content {
-    border: 2px solid black;
+    border: 2px solid var(--black);
     border-radius: 20px;
     padding: 2em;
     height: 100%;
@@ -51,23 +58,18 @@
   
 .cta-btn--hero {
     border: 2px solid transparent;
-    border-image: linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%);
+    border-image: linear-gradient(89deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-image-slice: 1;
     color: #04C8DE !important;
+    background-image: linear-gradient(89deg, var(--white) 0%, var(--white) 100%);
 }
 .cta-btn--hero:hover {
-    color: white !important;
-}
-  
-.cta-btn--hero::after {
-    background-image: linear-gradient(89deg, white 0%, white 100%);
-}
-  
-.cta-btn--hero:hover {
-    -webkit-text-fill-color: #FF5EDF;
+    -webkit-text-fill-color: var(--white);
     text-decoration: none;
+    color: white !important;
+    background-image: linear-gradient(89deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
-
+  
 .cta-btn--hero::after {
     width: 100%;
 }
