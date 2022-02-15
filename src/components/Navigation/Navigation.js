@@ -10,7 +10,10 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
+    const handleDelete = () => {
+        handleClose();
+        deleteProfile();
+    }
 
     if (isSignedIn) {
         return (
@@ -32,7 +35,7 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
                     <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" onClick={handleClose}>
                         No
                         </a>
-                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" onClick={() => deleteProfile()}>
+                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" onClick={() => handleDelete()}>
                         Yes
                         </a>
                     </Modal.Footer>
