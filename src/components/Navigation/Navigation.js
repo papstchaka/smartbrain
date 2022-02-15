@@ -29,7 +29,7 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
 
                 <Modal show={show} onHide={handleClose} dialogClassName="modal-big" contentClassName="modal-content">
                     <Modal.Header>
-                        <Modal.Title id="contained-modal-title-vcenter"><h1>Are you sure deleting your profile?</h1></Modal.Title>
+                        <Modal.Title id="contained-modal-title-vcenter"><h3>Are you sure deleting your profile?</h3></Modal.Title>
                     </Modal.Header>
                     <Modal.Footer>
                     <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" onClick={handleClose}>
