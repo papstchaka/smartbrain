@@ -5,13 +5,12 @@
     --linkform-2-color: #333333;
     --linkform-3-color: #00cdac;
     --bounding-color: #149df2;
-    --navigation-1-color: #2e93aa;
-    --navigation-2-color: #ced6d9;
+    --navigation-1-color: #00cdac;
+    --navigation-2-color: #2e93aa;
     --index-1-color: #2e93aa;
     --index-2-color: #00cdac;
     --white: white;
     --black: black;
-    /* --dark-gray: #333333; */
-    --modal-1-color: #2e93aa;
+    --modal-1-color: white;
     --modal-2-color: white;
 }
