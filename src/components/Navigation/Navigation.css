@@ -2,27 +2,45 @@
 
 .modal-big {
     background: linear-gradient(89deg, var(--modal-1-color) 0%, var(--modal-2-color) 100%);
-    text-align: center;
+    text-align: left;
     border: 1px solid var(--black);
-    border-radius: 20px;
+    border-radius: 3px;
     position: fixed;
     z-index:9999;
     top: 20%;
-    left: 1em;
-    right: 1em;
-    padding: 3.2rem;
+    left: 20%;
+    right: 20%;
+    padding: 0.5rem;
 }
 
-.modal-content {
-    border: 2px solid var(--black);
-    border-radius: 20px;
-    padding: 2em;
-    height: 100%;
+.modal-header {
+    margin: 0.5rem 0rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+    height: 100% !important;
+}
+
+.modal-body {
+    display: inline-table;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--navigation-2-color);
+    text-shadow: 0 5px #d3d3d3;
+    line-height: 1;
+    align-self: center;
+    block-size: auto;
+    padding: 2rem 0rem;
+    height: 10rem;
+    width: 100%;
+    text-align: -webkit-center;
 }
 
 .modal-footer {
 	justify-content: space-between;
     display: flex;
+    flex-flow: wrap;
 }
 
 /* Call to Action Button */
@@ -55,7 +73,7 @@
     border: 2px solid transparent;
     border-image: linear-gradient(89deg, var(--navigation-1-color) 0%, var(--navigation-2-color) 100%);
     border-image-slice: 1;
-    color: #04C8DE !important;
+    color: var(--navigation-2-color) !important;
     background-image: linear-gradient(89deg, var(--white) 0%, var(--white) 100%);
 }
 .cta-btn--hero:hover {
@@ -67,4 +85,9 @@
   
 .cta-btn--hero::after {
     width: 100%;
+}
+
+.ctn-btn--modal {
+    width: 100px;
+    text-align: center;
 }

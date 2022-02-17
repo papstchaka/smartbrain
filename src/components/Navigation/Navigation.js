@@ -32,15 +32,20 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
                     </p>
                 </nav>
 
-                <Modal show={show} onHide={handleClose} dialogClassName="modal-big" contentClassName="modal-content">
+                <Modal show={show} onHide={handleClose} dialogClassName="modal-big">
                     <Modal.Header>
-                        <Modal.Title id="contained-modal-title-vcenter"><h3>Are you sure deleting your profile?</h3></Modal.Title>
+                        <Modal.Title className="modal-header"><h2 className="modal-header">Smart Brain</h2></Modal.Title>
                     </Modal.Header>
+                    <hr></hr>
+                    <Modal.Body className="modal-body">
+                        <p>Are you sure you want to delete your profile?</p>
+                    </Modal.Body>
+                    <hr></hr>
                     <Modal.Footer>
-                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" onClick={handleClose}>
+                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero ctn-btn--modal" onClick={handleClose}>
                         No
                         </a>
-                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" onClick={() => handleDelete()}>
+                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero ctn-btn--modal" onClick={() => handleDelete()}>
                         Yes
                         </a>
                     </Modal.Footer>
