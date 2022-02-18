@@ -20,6 +20,15 @@ const particlesOptions = {
         value_area: 800
       }
     }
+  },
+  interactivity: {
+    detect_on: "window",
+    events : {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      }
+    }
   }
 }
 
