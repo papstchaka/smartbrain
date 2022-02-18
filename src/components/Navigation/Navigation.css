@@ -73,6 +73,7 @@
     border-image-slice: 1;
     color: var(--navigation-2-color) !important;
     background-color: var(--white);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
 }
 .cta-btn--hero:hover {
     -webkit-text-fill-color: var(--white);
@@ -81,7 +82,11 @@
     border-image-slice: 1;
     text-decoration: none;
     color: white !important;
-    background-image: linear-gradient(89deg, var(--navigation-1-color) 0%, var(--navigation-2-color) 100%);
+    background: scroll;
+}
+
+.cta-btn--hero::after {    
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
 }
 
 .ctn-btn--modal {
