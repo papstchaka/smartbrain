@@ -93,3 +93,9 @@
     width: 100px;
     text-align: center;
 }
+
+.ctn-btn--modal:hover {
+    background: linear-gradient(89deg, var(--navigation-1-color) 0%, var(--navigation-2-color) 100%);
+    border-image: linear-gradient(89deg, var(--navigation-1-color) 0%, var(--navigation-2-color) 100%);
+    border-image-slice: 1;
+}
