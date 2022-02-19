@@ -10,6 +10,7 @@ import ImageLinkForm from "../components/ImageLinkForm/ImageLinkForm";
 import FaceRecognition from "../components/FaceRecognition/FaceRecognition";
 
 import './App.css';
+import "../components/Navigation/Navigation.css"
 
 const particlesOptions = {
   particles: {
@@ -220,7 +221,7 @@ class App extends Component {
               <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
           )
         }
-        <a href="https://github.com/papstchaka" target="_blank" style={{position: "fixed", color: "black", bottom: "5px", right: "5px"}}>[2020] Alexander Christoph</a>
+        <a href="https://github.com/papstchaka" target="_blank" className="mycopyright btn-register">[2020] Alexander Christoph</a>
       </div>
     );
   };

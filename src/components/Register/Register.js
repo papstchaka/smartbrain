@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../Navigation/Navigation.css"
 
 class Register extends Component {
     constructor(props) {
@@ -98,8 +99,8 @@ class Register extends Component {
 
     render() {        
         return (
-            <article className="br3 ba b--black-10 mv4 shadow-5 w-100 w-50-m w-25-l mw6 center">
-                <main className="pa4 black-80">
+            <article className="br3 ba b--white-10 mv4 shadow-5 w-100 w-50-m w-25-l mw6 center mysignin">
+                <main className="pa4 white-80">
                     <div className="measure">
                         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                             <legend className="f1 fw6 ph0 mh0">Register</legend>
@@ -152,7 +153,7 @@ class Register extends Component {
                         <div className="">
                             <input 
                                 onClick={this.onSubmitSignIn}
-                                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+                                className="cta-btn cta-btn--hero cta-btn--login" 
                                 type="submit" 
                                 value="Register"
                             />

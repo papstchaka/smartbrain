@@ -99,3 +99,27 @@
     border-image: linear-gradient(89deg, var(--navigation-1-color) 0%, var(--navigation-2-color) 100%);
     border-image-slice: 1;
 }
+
+.cta-btn--login {
+    padding: 0.4rem 0.8rem;
+}
+
+.btn-register {
+    font-weight: bold;
+    line-height: 1;
+    color: var(--white);
+}
+
+.btn-register:hover {
+    color: var(--logo-2-color);
+    cursor: pointer;
+}
+
+.btn-register::after {
+    color: var(--logo-2-color);
+    cursor: pointer;
+}
+
+.mysignin {    
+    background: rgba(0, 0, 0, 0.15);
+}
