@@ -119,7 +119,7 @@ class App extends Component {
     this.setState({'input': event.target.value})
   }
 
-  onPictureSubmit = () => {
+  onPictureSubmit = async () => {
     this.setState({'imageUrl': this.state.input, "message": "", statusInvalid: false});
     fetch('https://strawberry-pie-56167.herokuapp.com/imageurl', {
       method: "post",
@@ -128,12 +128,13 @@ class App extends Component {
           input: this.state.input,
       })
     })
-      .then(response => {
+      .then(async (response) => {
         if (response.status == 503) {
           this.setState({boxes: [{}], message: "no valid image url", statusInvalid: true});
         }
+        return response;
       })
-      .then(response => response.json())
+      .then(async (response) => await response.json())
       .then(response => {
         if (response) {
           var detected;
