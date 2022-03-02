@@ -31,8 +31,7 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
                         Sign Out
                     </p>
                 </nav>
-
-                <Modal show={show} onHide={handleClose} dialogClassName="modal-big">
+                <Modal show={show} onHide={handleClose} dialogClassName="modal-big modal" className="modal">
                     <Modal.Header>
                         <Modal.Title className="modal-header"><h2 className="modal-header">Smart Brain</h2></Modal.Title>
                     </Modal.Header>
@@ -42,10 +41,10 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
                     </Modal.Body>
                     <hr></hr>
                     <Modal.Footer>
-                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero ctn-btn--modal" onClick={handleClose}>
+                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero cta-btn--modal" onClick={handleClose}>
                         No
                         </a>
-                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero ctn-btn--modal" onClick={() => handleDelete()}>
+                    <a rel="noopener noreferrer" className="cta-btn cta-btn--hero cta-btn--modal" onClick={() => handleDelete()}>
                         Yes
                         </a>
                     </Modal.Footer>

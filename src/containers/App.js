@@ -9,6 +9,10 @@ import Rank from "../components/Rank/Rank";
 import ImageLinkForm from "../components/ImageLinkForm/ImageLinkForm";
 import FaceRecognition from "../components/FaceRecognition/FaceRecognition";
 
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles, ModalStyle } from "../components/Themes/globalStyles";
+import { lightTheme, darkTheme } from "../components/Themes/Themes"
+
 import './App.css';
 import "../components/Navigation/Navigation.css"
 
@@ -47,7 +51,9 @@ const initialState = {
     joined: ""
   },
   message: "",
-  statusInvalid: false
+  statusInvalid: false,
+  theme: "dark",
+  toggle: false
 }
 
 class App extends Component {
@@ -67,9 +73,10 @@ class App extends Component {
         joined: ""
       },
       message: "",
-      statusInvalid: false
+      statusInvalid: false,
+      theme: "dark",
+      toggle: false
     }
-
   }
 
   loadUser = (data) => {
@@ -129,7 +136,7 @@ class App extends Component {
       })
     })
       .then(async (response) => {
-        if (response.status == 503) {
+        if (response.status === 503) {
           this.setState({boxes: [{}], message: "no valid image url", statusInvalid: true});
         }
         return response;
@@ -191,39 +198,65 @@ class App extends Component {
     })
     this.onRouteChange("signin")
   }
+  
+  themeToggler = () => {
+    this.state.theme === 'light' ? this.setState({theme: "dark"}) : this.setState({theme: "light"});
+  }
+  
+  triggerToggle = () => {
+    this.state.toggle === false ? this.setState({toggle: true}) : this.setState({toggle: false});
+    this.themeToggler();
+  }
 
   render() {
-    const { imageUrl, boxes, route, isSignedIn, message, statusInvalid } = this.state;
+    const { imageUrl, boxes, route, isSignedIn, message, statusInvalid, theme, toggle } = this.state;
     return (
-      <div className="App">
-        <Particles className='particles'
-          params={particlesOptions}
-        />
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile}/>
-        { route === 'home' ?
-          <div>
-            <Logo />
-            <Rank name={this.state.user.name} entries={this.state.user.entries}/>
-            <ImageLinkForm 
-              onInputChange={this.onInputChange} onPictureSubmit={this.onPictureSubmit}
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <>
+        <div className="App">
+          <GlobalStyles/>
+            <Particles className='particles'
+              params={particlesOptions}
             />
-            <h2 className="white" style={{height: "15px"}}>{message}</h2>
-            { statusInvalid ?
-              <></>
-            :
-              <FaceRecognition boxes={boxes} imageUrl={imageUrl}/>
-            }
-          </div>
-          : 
-          (
-            route === "signin" ?
-              <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-            :
-              <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-          )
-        }
-        <a href="https://github.com/papstchaka" target="_blank" className="mycopyright btn-register">[2020] Alexander Christoph</a>
-      </div>
+            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile}/>
+            { route === 'home' ?
+              <div>
+                <Logo />
+                <Rank name={this.state.user.name} entries={this.state.user.entries}/>
+                <ImageLinkForm 
+                  onInputChange={this.onInputChange} onPictureSubmit={this.onPictureSubmit}
+                />
+                <h2 className="white" style={{height: "15px"}}>{message}</h2>
+                { statusInvalid ?
+                  <></>
+                :
+                  <FaceRecognition boxes={boxes} imageUrl={imageUrl}/>
+                }
+              </div>
+              : 
+              (
+                route === "signin" ?
+                  <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                :
+                  <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+              )
+            }               
+            <div className="wrg-toggle" onClick={this.triggerToggle} className={`wrg-toggle ${toggle ? 'wrg-toggle--checked' : ''}`}>
+                  <div className="wrg-toggle-container">
+                      <div className="wrg-toggle-check">
+                          <span>🌜</span>
+                      </div>
+                      <div className="wrg-toggle-uncheck">
+                          <span>🌞</span>
+                      </div>
+                  </div>
+                  <div className="wrg-toggle-circle"></div>
+                  <input className="wrg-toggle-input" type="checkbox" aria-label="Toggle Button" />
+              </div>     
+            <a href="https://github.com/papstchaka" target="_blank" className="mycopyright btn-register">[2020] Alexander Christoph</a>
+        </div>
+        </>
+      </ThemeProvider>
     );
   };
 }
