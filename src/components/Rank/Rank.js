@@ -3,10 +3,10 @@ import React from 'react';
 function Rank({name, entries}) {
     return (
         <div>
-            <div className="white f3">
+            <div className="f2 b">
                 {`${name}, you already found...`}
             </div>
-            <div className="white f1">
+            <div className="f2 b">
                 {`${entries} faces!`}
             </div>
         </div>
