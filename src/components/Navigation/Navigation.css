@@ -220,3 +220,8 @@
 .wrg-toggle--checked .wrg-toggle-circle {
     left: 27px;
 }
+
+.sticksy {
+    margin: 0;
+    height: min-content;
+}

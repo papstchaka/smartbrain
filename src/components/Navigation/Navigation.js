@@ -24,10 +24,10 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
         return (
             <>
                 <nav style={{display: "flex", justifyContent: 'flex-end'}}>
-                    <p onClick={handleShow} className='cta-btn cta-btn--hero'>
+                    <p onClick={handleShow} className='cta-btn cta-btn--hero sticksy'>
                         Delete Profile
                     </p>
-                    <p onClick={handleSignout} className='cta-btn cta-btn--hero'>
+                    <p onClick={handleSignout} className='cta-btn cta-btn--hero sticksy'>
                         Sign Out
                     </p>
                 </nav>
@@ -54,10 +54,10 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile} ) {
     } else {
         return (
             <nav style={{display: "flex", justifyContent: 'flex-end'}}>
-                <p onClick={() => onRouteChange('signin')} className='cta-btn cta-btn--hero'>
+                <p onClick={() => onRouteChange('signin')} className='cta-btn cta-btn--hero sticksy'>
                     Sign In
                 </p>
-                <p onClick={() => onRouteChange('register')} className='cta-btn cta-btn--hero'>
+                <p onClick={() => onRouteChange('register')} className='cta-btn cta-btn--hero sticksy'>
                     Register
                 </p>
             </nav>
