@@ -2,4 +2,5 @@
 
 .Tilt {
     background: linear-gradient(89deg, var(--logo-1-color) 0%, var(--logo-2-color) 100%);
+    backdrop-filter: blur(20px);
 }
