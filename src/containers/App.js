@@ -218,7 +218,19 @@ class App extends Component {
             <Particles className='particles'
               params={particlesOptions}
             />
-            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile}/>
+            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle}/>      
+            <div className="wrg-toggle" onClick={this.triggerToggle} className={`wrg-toggle ${toggle ? 'wrg-toggle--checked' : ''}`}>
+                <div className="wrg-toggle-container">
+                    <div className="wrg-toggle-check">
+                        <span>🌜</span>
+                    </div>
+                    <div className="wrg-toggle-uncheck">
+                        <span>🌞</span>
+                    </div>
+                </div>
+                <div className="wrg-toggle-circle"></div>
+                <input className="wrg-toggle-input" type="checkbox" aria-label="Toggle Button" />
+            </div>   
             { route === 'home' ?
               <div>
                 <Logo />
@@ -240,19 +252,7 @@ class App extends Component {
                 :
                   <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               )
-            }               
-            <div className="wrg-toggle" onClick={this.triggerToggle} className={`wrg-toggle ${toggle ? 'wrg-toggle--checked' : ''}`}>
-                  <div className="wrg-toggle-container">
-                      <div className="wrg-toggle-check">
-                          <span>🌜</span>
-                      </div>
-                      <div className="wrg-toggle-uncheck">
-                          <span>🌞</span>
-                      </div>
-                  </div>
-                  <div className="wrg-toggle-circle"></div>
-                  <input className="wrg-toggle-input" type="checkbox" aria-label="Toggle Button" />
-              </div>     
+            }           
             <a href="https://github.com/papstchaka" target="_blank" className="mycopyright btn-register">[2020] Alexander Christoph</a>
         </div>
         </>
