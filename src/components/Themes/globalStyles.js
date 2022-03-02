@@ -35,4 +35,8 @@ export const GlobalStyles = createGlobalStyle`
   & .modal-body {    
     text-shadow: 0 5px ${({ theme }) => theme.shadow};
   }
+
+  & .backgroundwhite {
+    color: ${({ theme }) => theme.text};
+  }
   `
