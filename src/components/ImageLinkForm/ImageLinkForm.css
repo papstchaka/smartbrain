@@ -11,3 +11,8 @@
         linear-gradient(90deg,var(--linkform-3-color) 2%,var(--linkform-2-color) 0,var(--linkform-2-color) 98%,var(--linkform-3-color) 0%)0 0 var(--linkform-2-color);
     background-size: 40px 60px;
 }
+
+.backgroundwhite {
+    background: var(--white);
+    backdrop-filter: blur(20px);
+}
