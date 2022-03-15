@@ -1,0 +1,4 @@
+.pbackground {
+    width: fit-content;
+    backdrop-filter: blur(1px);
+}
