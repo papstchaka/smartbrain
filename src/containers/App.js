@@ -14,8 +14,6 @@ import { GlobalStyles, ModalStyle } from "../components/Themes/globalStyles";
 import { lightTheme, darkTheme } from "../components/Themes/Themes"
 
 import './App.css';
-import "../components/Navigation/Navigation.css"
-import { takeWhile } from 'lodash';
 
 const particlesOptions = {
   particles: {
@@ -256,19 +254,7 @@ class App extends Component {
             <Particles className='particles'
               params={particlesOptions}
             />
-            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle}/>      
-            <div onClick={this.triggerToggle} className={`wrg-toggle ${toggle ? 'wrg-toggle--checked' : ''}`}>
-                <div className="wrg-toggle-container">
-                    <div className="wrg-toggle-check">
-                        <span>🌜</span>
-                    </div>
-                    <div className="wrg-toggle-uncheck">
-                        <span>🌞</span>
-                    </div>
-                </div>
-                <div className="wrg-toggle-circle"></div>
-                <input className="wrg-toggle-input" type="checkbox" aria-label="Toggle Button" />
-            </div>   
+            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle}/>        
             { route === 'home' ?
               <div>
                 <Logo scoreboard={this.state.scoreboard}/>
