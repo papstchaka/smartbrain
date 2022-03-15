@@ -15,6 +15,7 @@ import { lightTheme, darkTheme } from "../components/Themes/Themes"
 
 import './App.css';
 import "../components/Navigation/Navigation.css"
+import { takeWhile } from 'lodash';
 
 const particlesOptions = {
   particles: {
@@ -53,7 +54,8 @@ const initialState = {
   message: "",
   statusInvalid: false,
   theme: "dark",
-  toggle: false
+  toggle: false,
+  scoreboard: [{}]
 }
 
 class App extends Component {
@@ -75,8 +77,10 @@ class App extends Component {
       message: "",
       statusInvalid: false,
       theme: "dark",
-      toggle: false
+      toggle: false,
+      scoreboard: [{}]
     }
+    this.getScoreBoard()
   }
 
   loadUser = (data) => {
@@ -168,6 +172,7 @@ class App extends Component {
           })
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
+        this.getScoreBoard()
       })
       .catch(err => {
         if (this.state.statusInvalid) {
@@ -180,6 +185,7 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
+    this.getScoreBoard()
     if (route === 'signin') {
       this.setState(initialState)
     } else if (route === "home") {
@@ -208,6 +214,38 @@ class App extends Component {
     this.themeToggler();
   }
 
+  getScoreBoard = () => {
+    fetch('https://strawberry-pie-56167.herokuapp.com/scoreboard', {
+      method: "get",
+      headers: {'Content-Type': 'application/json'}
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response) {
+          const scoreboard = response.map((profile) => {
+            return {
+              name: profile.name,
+              count: parseInt(profile.entries)
+            }
+          });
+          scoreboard.sort((a, b) => (a.count > b.count) ? -1 : 1);
+          this.setState({scoreboard: scoreboard});
+        } else {
+          this.setState({scoreboard: [{
+            name: "empty",
+            count: ""
+          }]});
+        }
+      })
+      .catch(err => {
+        this.setState({scoreboard: [{
+          name: "error",
+          count: ""
+        }]});
+        console.log(err)
+      });
+  }
+
   render() {
     const { imageUrl, boxes, route, isSignedIn, message, statusInvalid, theme, toggle } = this.state;
     return (
@@ -219,7 +257,7 @@ class App extends Component {
               params={particlesOptions}
             />
             <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle}/>      
-            <div className="wrg-toggle" onClick={this.triggerToggle} className={`wrg-toggle ${toggle ? 'wrg-toggle--checked' : ''}`}>
+            <div onClick={this.triggerToggle} className={`wrg-toggle ${toggle ? 'wrg-toggle--checked' : ''}`}>
                 <div className="wrg-toggle-container">
                     <div className="wrg-toggle-check">
                         <span>🌜</span>
@@ -233,7 +271,7 @@ class App extends Component {
             </div>   
             { route === 'home' ?
               <div>
-                <Logo />
+                <Logo scoreboard={this.state.scoreboard}/>
                 <Rank name={this.state.user.name} entries={this.state.user.entries}/>
                 <ImageLinkForm 
                   onInputChange={this.onInputChange} onPictureSubmit={this.onPictureSubmit}
@@ -252,7 +290,8 @@ class App extends Component {
                 :
                   <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               )
-            }           
+            }      
+            {/* <ScoreBoard scoreboard={this.state.scoreboard}/>      */}
             <a href="https://github.com/papstchaka" target="_blank" className="mycopyright btn-register">[2020] Alexander Christoph</a>
         </div>
         </>
