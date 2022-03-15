@@ -11,7 +11,7 @@ function ImageLinkForm({ onInputChange, onPictureSubmit }) {
     
     return (
         <div>
-            <p className="f2 b">
+            <p className="f2 b ma0 mb4 pbackground center">
                 {'This Magic Brain will detect faces in your pictures. Give it a try!'}
             </p>
             <div className="center">
