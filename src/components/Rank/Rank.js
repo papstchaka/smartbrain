@@ -1,13 +1,15 @@
 import React from 'react';
 
+import './Rank.css'
+
 function Rank({name, entries}) {
     return (
         <div>
-            <div className="f2 b">
-                {`${name}, you already found...`}
+            <div className="f2 b center">
+                <p className='ma0 pbackground'>{`${name}, you already found...`}</p>
             </div>
-            <div className="f2 b">
-                {`${entries} faces!`}
+            <div className="f2 b center">
+                <p className='ma0 pbackground'>{`${entries} faces!`}</p>
             </div>
         </div>
     );
