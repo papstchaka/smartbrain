@@ -105,7 +105,7 @@ function _Modal({ handleCloseProfile, handleShowProfile, showProfile, deleteProf
                             </button>
                         </div>
                     </main>
-                    <div className='modal-close' onClick={() => handleCloseProfile()}>
+                    <div className='modal-close' onClick={() => handleCloseDelete()}>
                         &times;
                     </div>
                 </article>
