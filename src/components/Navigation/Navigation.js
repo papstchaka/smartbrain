@@ -4,7 +4,7 @@ import _Modal from "./Modal";
 
 import './Navigation.css';
 
-function Navigation( {onRouteChange, isSignedIn, deleteProfile, triggerToggle, toggle, user} ) {
+function Navigation( {onRouteChange, isSignedIn, deleteProfile, triggerToggle, toggle, user, loadUser, getScoreBoard} ) {
         
     const [showProfile, setShow] = React.useState(false);
   
@@ -30,7 +30,7 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile, triggerToggle, t
                         </p>
                     </div>
                 </nav>
-                <_Modal handleCloseProfile={handleCloseProfile} handleShowProfile={handleShowProfile} showProfile={showProfile} deleteProfile={deleteProfile} user={user} />
+                <_Modal handleCloseProfile={handleCloseProfile} handleShowProfile={handleShowProfile} showProfile={showProfile} deleteProfile={deleteProfile} user={user} loadUser={loadUser} getScoreBoard={getScoreBoard}/>
             </>
         );
     } else {

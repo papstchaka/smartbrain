@@ -47,7 +47,9 @@ const initialState = {
     email: "",
     id: "",
     entries: 0,
-    joined: ""
+    joined: "",
+    age: "",
+    pet: ""
   },
   message: "",
   statusInvalid: false,
@@ -70,7 +72,9 @@ class App extends Component {
         email: "",
         id: "",
         entries: 0,
-        joined: ""
+        joined: "",
+        age: "",
+        pet: ""
       },
       message: "",
       statusInvalid: false,
@@ -82,13 +86,27 @@ class App extends Component {
   }
 
   loadUser = (data) => {
-    this.setState({user: {
-      name: data.name,
-      email: data.email,
-      id: data.id,
-      entries: data.entries,
-      joined: data.joined
-    }})
+    if (data.age && data.pet) {
+      this.setState({user: {
+        name: data.name,
+        email: data.email,
+        id: data.id,
+        entries: data.entries,
+        joined: data.joined,
+        age: data.age,
+        pet: data.pet
+      }})
+    } else {
+      this.setState({user: {
+        name: data.name,
+        email: data.email,
+        id: data.id,
+        entries: data.entries,
+        joined: data.joined,
+        age: this.state.user.age,
+        pet: this.state.user.pet
+      }})
+    }
   }
 
   calculateFaceLocation = (data) => {
@@ -254,7 +272,7 @@ class App extends Component {
             <Particles className='particles'
               params={particlesOptions}
             />
-            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle} user={user}/>        
+            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle} user={user} loadUser={this.loadUser} getScoreBoard={this.getScoreBoard}/>        
             { route === 'home' ?
               <div>
                 <Logo scoreboard={this.state.scoreboard}/>
@@ -277,7 +295,6 @@ class App extends Component {
                   <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               )
             }      
-            {/* <ScoreBoard scoreboard={this.state.scoreboard}/>      */}
             <a href="https://github.com/papstchaka" target="_blank" className="mycopyright btn-register">[2020] Alexander Christoph</a>
         </div>
         </>
