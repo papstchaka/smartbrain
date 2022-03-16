@@ -8,10 +8,6 @@
     border-radius: 3px;
     position: fixed;
     z-index:9999;
-    top: 15%;
-    bottom: auto;
-    left: 20%;
-    right: 20%;
     padding: 0.5rem;
 }
 
@@ -90,6 +86,18 @@
 
 .cta-btn--hero::after {    
     transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+}
+
+@media screen and (max-width: 700px) and (min-width: 470px) {
+    .cta-btn--modal {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .cta-btn--modal {
+        font-size: 0.5rem;
+    }
 }
 
 .cta-btn--modal {
@@ -251,6 +259,12 @@
 
   .modal-content {
       width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
   }
 
   .modal-dialog {
