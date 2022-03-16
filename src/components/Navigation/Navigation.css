@@ -179,11 +179,13 @@
 
 .wrg-toggle-check {
     left: 12px;
+    font-size: large;
 }
 
 .wrg-toggle-uncheck {
     opacity: 1;
     right: 15px;
+    font-size: large;
 }
 
 .wrg-toggle-uncheck span, .wrg-toggle-check span {
