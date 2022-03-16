@@ -7,6 +7,8 @@ export const lightTheme = {
     body: '#FFF',
     text: '#363537',
     shadow: "#d3d3d3",
+    ctnbackground: "#4d4d4d",
+    btnbackground: "#fafafa",
 }
 export const darkTheme = {
     primary: "rgba(46, 147, 170, 0.5)",
@@ -17,4 +19,6 @@ export const darkTheme = {
     body: '#363537',
     text: '#FFF',
     shadow: "#484848",
+    ctnbackground: "#fafafa",
+    btnbackground: "#4d4d4d",
 }

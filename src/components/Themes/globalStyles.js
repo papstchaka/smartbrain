@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components"
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
@@ -38,5 +38,14 @@ export const GlobalStyles = createGlobalStyle`
 
   & .backgroundwhite {
     color: ${({ theme }) => theme.text};
+  }
+
+  & .wrg-toggle-container {
+    background-color: ${({ theme }) => theme.ctnbackground};
+  }
+
+  & .wrg-toggle-circle {
+    background-color: ${({ theme }) => theme.btnbackground};
+    border: 1px solid ${({ theme }) => theme.ctnbackground};
   }
   `

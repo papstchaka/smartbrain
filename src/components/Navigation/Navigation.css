@@ -166,8 +166,8 @@
 
 .wrg-toggle-check, .wrg-toggle-uncheck {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     top: 0;
     bottom: 0;
     margin-top: auto;
@@ -178,29 +178,28 @@
 }
 
 .wrg-toggle-check {
-    left: 8px;
+    left: 12px;
 }
 
 .wrg-toggle-uncheck {
     opacity: 1;
-    right: 10px;
+    right: 15px;
 }
 
 .wrg-toggle-uncheck span, .wrg-toggle-check span {
     align-items: center;
     display: flex;
-    height: 10px;
+    height: 15px;
     justify-content: center;
     position: relative;
-    width: 10px;
+    width: 15px;
 }
 
 .wrg-toggle-container{
-    width: 50px;
-    height: 24px;
+    width: 75px;
+    height: 36px;
     padding: 0;
     border-radius: 30px;
-    background-color: #4d4d4d;
     transition: all .2s ease;
 }
 
@@ -209,11 +208,9 @@
     position: absolute;
     top: 1px;
     left: 1px;
-    width: 22px;
-    height: 22px;
-    border: 1px solid #4d4d4d;
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
-    background-color: #fafafa;
     box-sizing: border-box;
     transition: all .25s ease;
 }
@@ -227,7 +224,7 @@
 }
 
 .wrg-toggle--checked .wrg-toggle-circle {
-    left: 27px;
+    left: 41px;
 }
 
 .sticksy {

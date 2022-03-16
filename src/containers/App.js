@@ -10,7 +10,7 @@ import ImageLinkForm from "../components/ImageLinkForm/ImageLinkForm";
 import FaceRecognition from "../components/FaceRecognition/FaceRecognition";
 
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles, ModalStyle } from "../components/Themes/globalStyles";
+import { GlobalStyles } from "../components/Themes/globalStyles";
 import { lightTheme, darkTheme } from "../components/Themes/Themes"
 
 import './App.css';
