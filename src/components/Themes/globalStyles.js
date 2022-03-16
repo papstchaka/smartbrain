@@ -28,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
     background: linear-gradient(89deg, ${({ theme }) => theme.primary} 0%, ${({ theme }) => theme.tertiary} 100%);
   }
   
-  & .modal {
+  & .modal-big {
     background-image: linear-gradient(89deg, ${({ theme }) => theme.modal1} 0%, ${({ theme }) => theme.modal2} 100%);
   }
 

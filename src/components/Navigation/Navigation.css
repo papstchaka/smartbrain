@@ -8,7 +8,8 @@
     border-radius: 3px;
     position: fixed;
     z-index:9999;
-    top: 20%;
+    top: 15%;
+    bottom: auto;
     left: 20%;
     right: 20%;
     padding: 0.5rem;
@@ -93,7 +94,7 @@
 
 .cta-btn--modal {
     background: var(--white);
-    width: 100px;
+    width: fit-content;
     text-align: center;
 }
 
@@ -225,3 +226,33 @@
     margin: 0;
     height: min-content;
 }
+
+.profile-modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-close {
+    font-size: 3rem;
+    font-style: bold;
+    cursor: pointer;
+  }
+  
+  .modal-close:hover {
+      color: grey;
+      cursor: pointer;
+  }
+
+  .modal-content {
+      width: 100%;
+  }
+
+  .modal-dialog {
+      backdrop-filter: brightness(0.5) blur(10px);
+  }

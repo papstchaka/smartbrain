@@ -245,7 +245,7 @@ class App extends Component {
   }
 
   render() {
-    const { imageUrl, boxes, route, isSignedIn, message, statusInvalid, theme, toggle } = this.state;
+    const { imageUrl, boxes, route, isSignedIn, user, message, statusInvalid, theme, toggle } = this.state;
     return (
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <>
@@ -254,7 +254,7 @@ class App extends Component {
             <Particles className='particles'
               params={particlesOptions}
             />
-            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle}/>        
+            <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle} user={user}/>        
             { route === 'home' ?
               <div>
                 <Logo scoreboard={this.state.scoreboard}/>
