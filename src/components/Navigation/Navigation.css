@@ -232,6 +232,13 @@
 .sticksy {
     margin: 0;
     height: min-content;
+    width: 9rem;
+    z-index: 999;
+    border-image: none;
+}
+
+.sticksy:hover {
+    border-image: none;
 }
 
 .profile-modal {
