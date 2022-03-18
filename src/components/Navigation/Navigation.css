@@ -135,6 +135,7 @@
 .mysignin {    
     background: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(5px);
+    margin-top: 10rem !important;
 }
 
 .wrg-toggle {
