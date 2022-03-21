@@ -51,6 +51,7 @@
     "react-particles-js": "^2.7.1",
     "react-scripts": "5.0.0",
     "react-tilt": "^0.1.4",
+    "sass": "^1.49.9",
     "serialize-javascript": "^6.0.0",
     "sockjs": "^0.3.24",
     "ssri": "^8.0.1",
