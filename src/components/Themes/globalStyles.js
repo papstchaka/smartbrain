@@ -41,4 +41,8 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.btnbackground};
     border: 1px solid ${({ theme }) => theme.ctnbackground};
   }
+
+  & .mycopyright {
+    color: ${({ theme }) => theme.text};
+  }
   `
