@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './ImageLinkForm.css'
-
 function ImageLinkForm({ onInputChange, onPictureSubmit }) {
     const handleKeyPress = (event) => {
         if (event.key === "Enter") {

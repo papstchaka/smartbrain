@@ -1,8 +1,6 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-import "./Navigation.css"
-
 
 function _Modal({ handleCloseProfile, handleShowProfile, showProfile, deleteProfile, user, loadUser, getScoreBoard }) {
         

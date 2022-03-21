@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './ScoreBoard.css'
-
 function ScoreBoard({ scoreboard }) {
     
     return (

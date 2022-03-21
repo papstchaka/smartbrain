@@ -3,8 +3,6 @@ import ThemeButton from "../Themes/ThemeButton";
 import _Modal from "./Modal";
 import { Dropdown } from 'react-bootstrap'
 
-import './Navigation.css';
-
 function Navigation( {onRouteChange, isSignedIn, deleteProfile, triggerToggle, toggle, user, loadUser, getScoreBoard} ) {
         
     const [showProfile, setShow] = React.useState(false);

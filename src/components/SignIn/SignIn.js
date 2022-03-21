@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "../Navigation/Navigation.css"
 
 class SignIn extends Component {
     constructor(props) {
@@ -88,7 +87,7 @@ class SignIn extends Component {
                         <div className="lh-copy mt3">
                             <p 
                                 onClick={() => onRouteChange('register')} 
-                                className="btn-register">
+                                className="cta-btn--register">
                                     Register
                             </p>
                         </div>

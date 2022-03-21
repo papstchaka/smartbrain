@@ -13,7 +13,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../components/Themes/globalStyles";
 import { lightTheme, darkTheme } from "../components/Themes/Themes"
 
-import './App.css';
+import '../style/main.scss';
 
 const particlesOptions = {
   particles: {
@@ -295,7 +295,7 @@ class App extends Component {
                   <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               )
             }      
-            <a href="https://github.com/papstchaka" target="_blank" className="mycopyright btn-register">[2020] Alexander Christoph</a>
+            <a href="https://github.com/papstchaka" target="_blank" className="mycopyright cta-btn--register">[2020] Alexander Christoph</a>
         </div>
         </>
       </ThemeProvider>

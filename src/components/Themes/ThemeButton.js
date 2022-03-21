@@ -1,8 +1,5 @@
 import React from 'react';
 
-import "../Navigation/Navigation.css"
-
-
 function ThemeButton({ triggerToggle, toggle }) {
     return (
         <div className='ma2'>

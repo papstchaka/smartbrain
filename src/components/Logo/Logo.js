@@ -3,7 +3,6 @@ import Tilt from 'react-tilt';
 import ScoreBoard from "../ScoreBoard/ScoreBoard";
 
 import brain from './brain.png'
-import './Logo.css'
 
 function Logo({ scoreboard }) {
     return (

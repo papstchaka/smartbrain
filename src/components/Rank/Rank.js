@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './Rank.css'
-
 function Rank({name, entries}) {
     return (
         <div>
