@@ -1,0 +1,17 @@
+.Tilt {
+    background: linear-gradient(89deg, $logo-1 0%, $logo-2 100%);
+    backdrop-filter: blur(20px);
+}
+
+.mygrid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: fit-content;
+    height: fit-content;
+    max-width: 150px;
+    max-height: 150px;
+}

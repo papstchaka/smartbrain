@@ -1,0 +1,21 @@
+.form {
+    width: 700px;
+    background:
+        radial-gradient(circle farthest-side at 0% 50%,$linkform-2 23.5%, $linkform-1 0)21px 30px,
+        radial-gradient(circle farthest-side at 0% 50%,$linkform-3 24%, $linkform-1 0)19px 30px,
+        linear-gradient($linkform-2 14%, $linkform-1 0,  $linkform-1 85%,$linkform-2 0)0 0,
+        linear-gradient(150deg,$linkform-2 24%,$linkform-3 0,$linkform-3 26%, $linkform-1 0, $linkform-1 74%,$linkform-3 0,$linkform-3 76%,$linkform-2 0)0 0,
+        linear-gradient(30deg,$linkform-2 24%,$linkform-3 0,$linkform-3 26%, $linkform-1 0, $linkform-1 74%,$linkform-3 0,$linkform-3 76%,$linkform-2 0)0 0,
+        linear-gradient(90deg,$linkform-3 2%,$linkform-2 0,$linkform-2 98%,$linkform-3 0%)0 0 $linkform-2;
+    background-size: 40px 60px;
+}
+
+.backgroundwhite {
+    background: $white;
+    backdrop-filter: blur(20px);
+}
+
+.pbackground {
+    width: fit-content;
+    backdrop-filter: blur(1.5px);
+}

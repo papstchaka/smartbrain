@@ -1,0 +1,14 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './components/faceRecognition';
+@import './components/imageLinkForm';
+@import './components/logo';
+@import './components/modal';
+@import './components/navigation';
+@import './components/scoreboard';
+@import './components/themeButton';
+@import './components/buttons';
+
+@import './containers/app';
+@import './containers/index';

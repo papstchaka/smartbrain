@@ -1,0 +1,16 @@
+.mysignin {    
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+    margin-top: 10rem !important;
+}
+
+.sticksy {
+    margin: 0;
+    height: min-content;
+    width: 9rem;
+    z-index: 999;
+    border-image: none !important;
+    &:hover {
+        border-image: none !important;
+    }
+}
