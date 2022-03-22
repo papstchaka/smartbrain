@@ -21,3 +21,23 @@
     max-height: 2vh;
     min-height: 2vh;
 }
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+.dropdown-img {
+    width: 36px;
+    height: 36px;
+    backdrop-filter: blur(20px);
+}
