@@ -274,7 +274,7 @@ class App extends Component {
             />
             <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle} user={user} loadUser={this.loadUser} getScoreBoard={this.getScoreBoard}/>        
             { route === 'home' ?
-              <div>
+              <div className="hero-facerecognition">
                 <Logo scoreboard={this.state.scoreboard}/>
                 <Rank name={this.state.user.name} entries={this.state.user.entries}/>
                 <ImageLinkForm 
