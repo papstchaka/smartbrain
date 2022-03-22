@@ -257,7 +257,6 @@ class App extends Component {
                     }
           });
           scoreboard.sort((a, b) => (a.count > b.count) ? -1 : 1);
-          console.log(scoreboard);
           this.setState({scoreboard: scoreboard});
         } else {
           this.setState({scoreboard: [{
