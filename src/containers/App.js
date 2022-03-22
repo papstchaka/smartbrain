@@ -230,6 +230,12 @@ class App extends Component {
     this.themeToggler();
   }
 
+  checkIfTest = (string) => {
+      return String(string)
+        .toLowerCase()
+        .includes("test");
+  };
+
   getScoreBoard = () => {
     fetch('https://strawberry-pie-56167.herokuapp.com/scoreboard', {
       method: "get",
@@ -238,13 +244,20 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          const scoreboard = response.map((profile) => {
-            return {
-              name: profile.name,
-              count: parseInt(profile.entries)
-            }
+          const scoreboard = response
+                  .filter((profile) => {
+                    return (
+                      !this.checkIfTest(profile.name) &&
+                      !this.checkIfTest(profile.email))
+                  })
+                  .map((profile) => {
+                    return {
+                      name: profile.name,
+                      count: parseInt(profile.entries)
+                    }
           });
           scoreboard.sort((a, b) => (a.count > b.count) ? -1 : 1);
+          console.log(scoreboard);
           this.setState({scoreboard: scoreboard});
         } else {
           this.setState({scoreboard: [{
