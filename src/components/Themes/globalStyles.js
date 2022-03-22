@@ -45,4 +45,8 @@ export const GlobalStyles = createGlobalStyle`
   & .mycopyright {
     color: ${({ theme }) => theme.text};
   }
+
+  & .mysignin {
+    color: ${({ theme }) => theme.text};
+  }
   `
