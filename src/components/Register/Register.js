@@ -19,6 +19,12 @@ class Register extends Component {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           );
     };
+
+    checkIfTest = (string) => {
+        return String(string)
+          .toLowerCase()
+          .includes("test");
+    };
     
     handleKeyPress = (event) => {
         if (event.key === "Enter") {
@@ -56,6 +62,10 @@ class Register extends Component {
         if (!this.state.email) {
             this.message = "Email Adress is missing";
             this.props.onRouteChange("register");
+        }
+        if (this.checkIfTest(this.state.email) || this.checkIfTest(this.state.name)) {
+            this.message = "You are not allowed to add test users!";
+            this.props.onRouteChange("regsiter");
         }
         if (this.message === "") {
             fetch('https://strawberry-pie-56167.herokuapp.com/register', {
