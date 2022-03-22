@@ -157,6 +157,13 @@ class Register extends Component {
                                 value="Register"
                             />
                         </div>
+                        <div className="lh-copy mt3">
+                            <p 
+                                onClick={() => this.props.onRouteChange('signin')} 
+                                className="cta-btn--register">
+                                    Sign in
+                            </p>
+                        </div>
                     </div>
                 </main>
             </article>
