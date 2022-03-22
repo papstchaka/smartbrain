@@ -58,7 +58,7 @@ function _Modal({ handleCloseProfile, handleShowProfile, showProfile, deleteProf
         <div>
             <Modal show={showProfile} onHide={() => handleCloseProfile()} dialogClassName="profile-modal" className="profile-modal">       
                 <article className='br3 ba b--black-10 mv4 w-100 w-50-m mw6 shadow-5 center modal modal-big'>
-                    <main className='pa4 w-80' style={{textAlign: "center"}}>
+                    <main className='pa4 w-80'>
                         <img src='http://tachyons.io/img/logo.jpg' className='h3 w3 dib center' alt='avatar'/>
                         <h1>{user.name}</h1>
                         <h4>{`Images submitted: ${user.entries}`}</h4>
@@ -72,7 +72,7 @@ function _Modal({ handleCloseProfile, handleShowProfile, showProfile, deleteProf
                         <input onChange={onFormChange} type='text' name='user-age' className='pa2 ba w-100 mb2' placeholder={age}></input>
                         <label className='mt2 fw6 mb2' htmlFor='user-pet'>Favourite Pet:</label>
                         <input onChange={onFormChange} type='text' name='user-pet' className='pa2 ba w-100 mb2' placeholder={pet}></input>
-                        <div className='mt4' style={{ display: 'flex', justifyContent: 'space-between'}}>
+                        <div className='mt4'>
                             <button className='b pa1 grow pointer hover-white w-40 b--black-20 cta-btn--hero cta-btn--modal'
                                 onClick={handleShowDelete}>
                                 Delete Profile
@@ -90,9 +90,9 @@ function _Modal({ handleCloseProfile, handleShowProfile, showProfile, deleteProf
             </Modal>
             <Modal show={showDelete} onHide={handleCloseDelete} dialogClassName="profile-modal" className="profile-modal">    
                 <article className='br3 ba b--black-10 mv4 w-100 w-50-m mw6 shadow-5 center modal modal-big'>
-                    <main className='pa4 w-80' style={{textAlign: "center"}}>
+                    <main className='pa4 w-80'>
                         <p>Are you sure you want to delete your profile?</p>
-                        <div className='mt4' style={{ display: 'flex', justifyContent: 'space-between'}}>
+                        <div className='mt4'>
                             <button className='b pa1 grow pointer hover-white w-40 b--black-20 cta-btn--hero cta-btn--modal'
                                 onClick={handleCloseDelete}>
                                 No
