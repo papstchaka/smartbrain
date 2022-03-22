@@ -18,11 +18,11 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile, triggerToggle, t
     if (isSignedIn) {
         return (
             <>
-                <nav style={{display: "flex", justifyContent: 'space-between'}}>
+                <nav className="navbar">
                     <ThemeButton triggerToggle={triggerToggle} toggle={toggle}/>
                     <div className="ma2 tc">
                         <Dropdown>
-                            <Dropdown.Toggle variant="success"style={{background: "none", border: "none"}}>
+                            <Dropdown.Toggle variant="success"style={{background: "none", border: "none", padding: "0"}}>
                                 <img src="https://img.myloview.de/poster/house-icon-element-of-zoo-for-mobile-concept-and-web-apps-icon-outline-thin-line-icon-for-website-design-and-development-app-development-400-161676774.jpg" className="br-100 dib" alt="avatar" style={{width: "36px", height: "36px", backdropFilter: "blur(20px)"}}/>
                             </Dropdown.Toggle>
                             <Dropdown.Menu style={{display: "flex", flexDirection: "column", zIndex: "999", borderRadius: "5px", border: "2px solid white"}}>
@@ -37,11 +37,11 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile, triggerToggle, t
         );
     } else {
         return (
-            <nav style={{display: "flex", justifyContent: 'space-between'}}>
+            <nav className="navbar">
                 <ThemeButton triggerToggle={triggerToggle} toggle={toggle}/>
                 <div className="ma2 tc">
                     <Dropdown>
-                        <Dropdown.Toggle variant="success"style={{background: "none", border: "none"}}>
+                        <Dropdown.Toggle variant="success"style={{background: "none", border: "none", padding: "0"}}>
                             <img src="https://img.myloview.de/poster/house-icon-element-of-zoo-for-mobile-concept-and-web-apps-icon-outline-thin-line-icon-for-website-design-and-development-app-development-400-161676774.jpg" className="br-100 dib" alt="avatar" style={{width: "36px", height: "36px", backdropFilter: "blur(20px)"}}/>
                         </Dropdown.Toggle>
                         <Dropdown.Menu style={{display: "flex", flexDirection: "column", zIndex: "999", borderRadius: "5px", border: "2px solid white"}}>

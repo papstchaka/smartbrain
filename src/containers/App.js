@@ -290,12 +290,18 @@ class App extends Component {
               : 
               (
                 route === "signin" ?
-                  <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                  <div className="hero">
+                    <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                  </div>
                 :
-                  <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                  <div className="hero">
+                    <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                  </div>
               )
-            }      
-            <a href="https://github.com/papstchaka" target="_blank" className="mycopyright cta-btn--register">[2020] Alexander Christoph</a>
+            }     
+            <div className='navbar'> 
+              <a href="https://github.com/papstchaka" target="_blank" className="mycopyright cta-btn--register">[2020] Alexander Christoph</a>
+            </div>
         </div>
         </>
       </ThemeProvider>

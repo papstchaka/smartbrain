@@ -25,3 +25,11 @@
     text-decoration: none;
     backdrop-filter: blur(20px);
 }
+
+.hero {
+    display: flex;
+    height: 96vh;
+    min-height: 96vh;
+    max-height: 96vh;
+    align-items: center;
+}

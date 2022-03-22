@@ -1,7 +1,6 @@
 .mysignin {    
     background: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(5px);
-    margin-top: 10rem !important;
 }
 
 .sticksy {
@@ -13,4 +12,12 @@
     &:hover {
         border-image: none !important;
     }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 2vh;
+    max-height: 2vh;
+    min-height: 2vh;
 }
