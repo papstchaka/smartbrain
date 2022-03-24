@@ -1,4 +1,29 @@
 # smartbrain
+
+<p align="center">
+    <p align="center">
+        <a href="https://github.com/papstchaka/smartbrain/actions">
+          <img alt="Build and Deploy" src="https://github.com/papstchaka/smartbrain/actions/workflows/gh-pages.yml/badge.svg"/>
+        </a>
+        <a href="https://github.com/papstchaka/smartbrain/actions">
+          <img alt="Build" src="https://github.com/papstchaka/smartbrain/actions/workflows/node.js.yml/badge.svg"/>
+        </a>
+        <a href="https://github.com/papstchaka/smartbrain/actions">
+          <img alt="Code Quality" src="https://github.com/papstchaka/smartbrain/actions/workflows/codeql-analysis.yml/badge.svg"/>
+        </a>
+        <a href="https://github.com/papstchaka/smartbrain/issues">
+          <img alt="Issues" src="https://img.shields.io/github/issues/papstchaka/smartbrain?color=0088ff"/>
+        </a>
+        <a href="https://github.com/papstchaka/smartbrain/pulls">
+          <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/papstchaka/smartbrain?color=0088ff"/>
+        </a>
+    </p>
+</p>
+
+---
+
+<br></br>
+
 Frontend for the smartbrain project
 
 Implementing the frontend webiste of the smart brain project which can be accessed via <a href="https://papstchaka.github.io/smartbrain/" target="_blank">Smart Brain</a>.
