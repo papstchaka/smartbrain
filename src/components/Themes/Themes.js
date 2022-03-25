@@ -9,6 +9,8 @@ export const lightTheme = {
     shadow: "#d3d3d3",
     ctnbackground: "#4d4d4d",
     btnbackground: "#fafafa",
+    borderbackground: "linear-gradient(60deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%));",
+    background: "lightseagreen",
 }
 export const darkTheme = {
     primary: "rgba(46, 147, 170, 0.5)",
@@ -21,4 +23,6 @@ export const darkTheme = {
     shadow: "#484848",
     ctnbackground: "#fafafa",
     btnbackground: "#4d4d4d",
+    borderbackground: "linear-gradient(60deg, hsl(224, 85%, 33%), hsl(269, 85%, 33%), hsl(314, 85%, 33%), hsl(359, 85%, 33%), hsl(44, 85%, 33%), hsl(89, 85%, 33%), hsl(134, 85%, 33%), hsl(179, 85%, 33%));",
+    background: "teal",
 }

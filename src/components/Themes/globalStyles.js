@@ -49,4 +49,15 @@ export const GlobalStyles = createGlobalStyle`
   & .mysignin {
     color: ${({ theme }) => theme.text};
   }
+
+  & .gradient-border {
+    background: ${({ theme }) => theme.background};
+    &:after {
+      background: ${({ theme }) => theme.borderbackground};
+      background-size: 300% 300%;
+      background-position: 0 50%;
+      border-radius: calc(2 * var(--border-width));
+      animation: moveGradient 4s alternate infinite;
+    }
+  }
   `
