@@ -6,13 +6,19 @@ import brain from './brain.png'
 
 function Logo({ scoreboard }) {
     return (
-        <div className="ma4 mt0 mygrid">
-            <Tilt className="Tilt br2 shadow-2 logo" options={{ max : 55 }}>
-                <div className="Tilt-inner pa3" style={{textAlign: "center"}}>
-                    <img src={brain} alt="logo" style={{paddingTop: "5px"}}/>
+        <div className='container mb4 mt5'>
+            <div className='box'>
+                <div className='box-row box-row-start'>
+                    <Tilt className="Tilt br2 shadow-2 logo" options={{ max : 55 }}>
+                        <div className="Tilt-inner pa3" style={{textAlign: "center"}}>
+                            <img src={brain} alt="logo" style={{height: "100%", width: "100%"}}/>
+                        </div>
+                    </Tilt>
                 </div>
-            </Tilt>
-            <ScoreBoard scoreboard={scoreboard}/>
+                <div className='box-row box-row-end'>
+                    <ScoreBoard scoreboard={scoreboard}/>
+                </div>
+            </div>
         </div>
     );
 }

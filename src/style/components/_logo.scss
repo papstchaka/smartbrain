@@ -1,6 +1,7 @@
 .Tilt {
     background: linear-gradient(89deg, $logo-1 0%, $logo-2 100%);
     backdrop-filter: blur(20px);
+    height: 100%;
 }
 
 .mygrid {
@@ -10,8 +11,36 @@
 }
 
 .logo {
-    width: fit-content;
-    height: fit-content;
     max-width: 150px;
     max-height: 150px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+.container .box {
+    display : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    margin: 0 2rem;
+    @include respond(phone) {
+        margin: 0 0.5rem;
+    }
+ }
+
+ .box-row {
+     max-width: 50%;
+     width: 50%;
+     display: flex;
+     &-start {
+         justify-content: flex-start;
+     }
+     &-end {
+         justify-content: flex-end;
+     }
+     @include respond(phone-xs) {
+         max-width: 80px;
+         max-height: 80px;
+     }
+ }
