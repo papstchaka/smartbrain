@@ -12,6 +12,7 @@
     --border-width: 3px;
     position: relative;
     border-radius: var(--border-width);
+    text-transform: uppercase;
     &::after {
         position: absolute;
         content: "";
@@ -27,8 +28,4 @@
     50% {
         background-position: 100% 50%;
     }
-}
-
-.myp {
-    text-transform: uppercase;
 }
