@@ -13,6 +13,9 @@ function ScoreBoard({ scoreboard }) {
           updateSize();
           return () => window.removeEventListener('resize', updateSize);
         }, []);
+        if (size.fontSize > 18.05) {
+            size.fontSize = 18.05;
+        }
         return size;
     }
     
