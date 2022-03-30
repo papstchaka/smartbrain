@@ -38,4 +38,4 @@ Furthermore, once you are registered you'll get a unique score that tells you th
 
 Backend-server is implemented due to <a href="https://github.com/papstchaka/smartbrain-api" target="_blank">Smart Brain API</a> and hosted on <a href="https://www.heroku.com/" target="_blank">Heroku</a>.
 
-Implemented by the instructions given from <a href="https://github.com/aneagoie" target="_blank">Andrei Neagioe</a> in his "Zero to Mastery" course on [`udemy`](https://www.udemy.com/). The original code used to be similar to [`Face-Recognition-Brain`](https://github.com/aneagoie/face-recognition-brain)
+Implemented by the instructions given from <a href="https://github.com/aneagoie" target="_blank">Andrei Neagioe</a> in his "Zero to Mastery" course on [`Udemy`](https://www.udemy.com/). The original code used to be similar to [`Face-Recognition-Brain`](https://github.com/aneagoie/face-recognition-brain)
