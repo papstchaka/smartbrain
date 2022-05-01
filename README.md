@@ -11,9 +11,6 @@
         <a href="https://github.com/papstchaka/smartbrain/actions">
           <img alt="Code Quality" src="https://github.com/papstchaka/smartbrain/actions/workflows/codeql-analysis.yml/badge.svg"/>
         </a>
-        <a href="https://github.com/papstchaka/smartbrain/actions">
-          <img alt="Dependabot Auto-merge" src="https://github.com/papstchaka/smartbrain/actions/workflows/auto-merge.yml/badge.svg"/>
-        </a>
         <a href="https://github.com/papstchaka/smartbrain/issues">
           <img alt="Issues" src="https://img.shields.io/github/issues/papstchaka/smartbrain?color=0088ff"/>
         </a>
