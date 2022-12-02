@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
+import Banner from 'react-js-banner';
 
 import Navigation from "../components/Navigation/Navigation";
 import SignIn from "../components/SignIn/SignIn";
@@ -284,6 +285,7 @@ class App extends Component {
             <Particles className='particles'
               params={particlesOptions}
             />
+            <Banner title="Deprecated/Out of service due to Backend shutdown of Heroku" className="banner"/>
             <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle} user={user} loadUser={this.loadUser} getScoreBoard={this.getScoreBoard}/>        
             { route === 'home' ?
               <div className="hero-facerecognition">
