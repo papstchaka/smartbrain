@@ -1,6 +1,6 @@
 # smartbrain
 
-**<p style="color:red">Please note that this app is no longer working/maintained due to <a href="https://devcenter.heroku.com/changelog-items/2461">Heroku's decision</a> - where the corresponding backend was hosted - to shut down any previously free resources from 28/11/2022 onwoards</p>**
+**<span style="color:red">Please note that this app is no longer working/maintained due to <a href="https://devcenter.heroku.com/changelog-items/2461">Heroku's decision</a> - where the corresponding backend was hosted - to shut down any previously free resources from 28/11/2022 onwoards</span>**
 
 <p align="center">
     <p align="center">
