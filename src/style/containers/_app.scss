@@ -26,6 +26,11 @@
     backdrop-filter: blur(20px);
 }
 
+.mybanner {
+    color: $logo-2;
+    text-decoration: none;
+}
+
 .hero {
     display: flex;
     height: 91vh;

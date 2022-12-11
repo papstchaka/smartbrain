@@ -285,7 +285,13 @@ class App extends Component {
             <Particles className='particles'
               params={particlesOptions}
             />
-            <Banner title="Deprecated/Out of service due to Backend shutdown of Heroku" className="banner"/>
+            <Banner className="banner" showBanner={true}>
+              <h2>
+                Deprecated/Out of service due to Backend shutdown of Heroku - see
+                <a href='https://github.com/papstchaka/smartbrain' target='_blank' className="mybanner cta-btn--register"> here </a> 
+                for more info
+              </h2>
+            </Banner>
             <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} deleteProfile={this.deleteProfile} triggerToggle={this.triggerToggle} toggle={toggle} user={user} loadUser={this.loadUser} getScoreBoard={this.getScoreBoard}/>        
             { route === 'home' ?
               <div className="hero-facerecognition">
