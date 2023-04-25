@@ -63,7 +63,8 @@
     "styled-components": "^5.3.3",
     "tachyons": "^4.11.1",
     "websocket-extensions": "^0.1.4",
-    "y18n": "^5.0.8"
+    "y18n": "^5.0.8",
+    "yaml": "^2.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
