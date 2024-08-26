@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
+import Particles from "react-tsparticles";
+
 import Banner from 'react-js-banner';
 
 import Navigation from "../components/Navigation/Navigation";

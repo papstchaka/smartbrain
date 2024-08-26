@@ -1,5 +1,5 @@
 import React from 'react';
-import Tilt from 'react-tilt';
+import { Tilt } from 'react-tilt'; // Corrected import statement
 import ScoreBoard from "../ScoreBoard/ScoreBoard";
 
 import brain from './brain.png'
