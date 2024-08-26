@@ -24,6 +24,7 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
+    "@tsparticles/engine": "^3.5.0",
     "ansi-html": "https://registry.npmjs.org/ansi-html-community/-/ansi-html-community-0.0.8.tgz",
     "ansi-regex": "^6.0.1",
     "async": "^3.2.6",
@@ -56,6 +57,7 @@
     "react-particles": "^2.12.2",
     "react-scripts": "^5.0.1",
     "react-tilt": "^1.0.2",
+    "react-tsparticles": "^2.12.2",
     "sass": "^1.77.8",
     "semver": "^7.6.3",
     "serialize-javascript": "^6.0.2",
@@ -63,6 +65,7 @@
     "ssri": "^10.0.6",
     "styled-components": "^6.1.12",
     "tachyons": "^4.12.0",
+    "tsparticles": "^3.5.0",
     "websocket-extensions": "^0.1.4",
     "y18n": "^5.0.8",
     "yaml": "^2.5.0"
