@@ -1,6 +1,6 @@
 import React from 'react';
 import ThemeButton from "../Themes/ThemeButton";
-import _Modal from "./Modal";
+import ProfileModal from "./Modal";
 import { Dropdown } from 'react-bootstrap'
 
 function Navigation( {onRouteChange, isSignedIn, deleteProfile, triggerToggle, toggle, user, loadUser, getScoreBoard} ) {
@@ -32,7 +32,7 @@ function Navigation( {onRouteChange, isSignedIn, deleteProfile, triggerToggle, t
                         </Dropdown>
                     </div>
                 </nav>
-                <_Modal handleCloseProfile={handleCloseProfile} handleShowProfile={handleShowProfile} showProfile={showProfile} deleteProfile={deleteProfile} user={user} loadUser={loadUser} getScoreBoard={getScoreBoard}/>
+                <ProfileModal handleCloseProfile={handleCloseProfile} handleShowProfile={handleShowProfile} showProfile={showProfile} deleteProfile={deleteProfile} user={user} loadUser={loadUser} getScoreBoard={getScoreBoard}/>
             </>
         );
     } else {
