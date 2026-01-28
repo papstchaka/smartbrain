@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Particles from "react-tsparticles";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 import Banner from 'react-js-banner';
 
@@ -23,14 +24,24 @@ const particlesOptions = {
       value: 300,
       density: {
         enable: true,
-        value_area: 800
+        area: 800
       }
+    },
+    move: {
+      enable: true,
+      speed: 2
+    },
+    links: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4
     }
   },
   interactivity: {
-    detect_on: "window",
-    events : {
-      onhover: {
+    detectsOn: "window",
+    events: {
+      onHover: {
         enable: true,
         mode: "repulse"
       }
@@ -58,6 +69,7 @@ const initialState = {
   theme: "dark",
   toggle: false,
   scoreboard: [{}]
+  // Note: particlesInit is intentionally excluded - it should only be set once during mount
 }
 
 class App extends Component {
@@ -82,9 +94,18 @@ class App extends Component {
       statusInvalid: false,
       theme: "dark",
       toggle: false,
-      scoreboard: [{}]
+      scoreboard: [{}],
+      particlesInit: false
     }
     this.getScoreBoard()
+  }
+
+  componentDidMount() {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      this.setState({ particlesInit: true });
+    });
   }
 
   loadUser = (data) => {
@@ -277,19 +298,21 @@ class App extends Component {
   }
 
   render() {
-    const { imageUrl, boxes, route, isSignedIn, user, message, statusInvalid, theme, toggle } = this.state;
+    const { imageUrl, boxes, route, isSignedIn, user, message, statusInvalid, theme, toggle, particlesInit } = this.state;
     return (
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <>
         <div className="App">
           <GlobalStyles/>
-            <Particles className='particles'
-              params={particlesOptions}
-            />
+            {particlesInit && (
+              <Particles className='particles'
+                options={particlesOptions}
+              />
+            )}
             <Banner className="banner" showBanner={true}>
               <h2>
                 Deprecated/Out of service due to Backend shutdown of Heroku - see
-                <a href='https://github.com/papstchaka/smartbrain' target='_blank' className="mybanner cta-btn--register"> here </a> 
+                <a href='https://github.com/papstchaka/smartbrain' target='_blank' rel='noreferrer' className="mybanner cta-btn--register"> here </a> 
                 for more info
               </h2>
             </Banner>
@@ -321,7 +344,7 @@ class App extends Component {
               )
             }     
             <div className='navbar'> 
-              <a href="https://github.com/papstchaka" target="_blank" className="mycopyright cta-btn--register">[2020] Alexander Christoph</a>
+              <a href="https://github.com/papstchaka" target="_blank" rel="noreferrer" className="mycopyright cta-btn--register">[2020] Alexander Christoph</a>
             </div>
         </div>
         </>

@@ -1,5 +1,11 @@
 import React from 'react';
-import { vmin } from 'react-native-expo-viewport-units'
+
+// Helper function to calculate vmin value
+function vmin(value) {
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    return (value / 100) * Math.min(vw, vh);
+}
 
 function ScoreBoard({ scoreboard }) {
 
@@ -23,8 +29,8 @@ function ScoreBoard({ scoreboard }) {
             <div className="Tilt-inner pa2 scoreboard br2 shadow-1 gradient-border" style={useWindowSize()}>
                 <p className='mt0 mb1'>Scoreboard: </p>
                 {
-                    scoreboard.map((entries) => {
-                        return <p className='mb0'>{entries.name}: {entries.count}</p>
+                    scoreboard.map((entries, index) => {
+                        return <p key={index} className='mb0'>{entries.name}: {entries.count}</p>
                     })
                 }
             </div>
